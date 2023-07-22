@@ -1,7 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-function Category({ categories, selectedCategory, onChangeCategory }) {
+function CategoryFilter({ categories, selectedCategory, onChangeCategory }) {
   return (
     <div className="">
       <select className="" value={selectedCategory} onChange={onChangeCategory}>
@@ -16,10 +16,10 @@ function Category({ categories, selectedCategory, onChangeCategory }) {
   );
 }
 
-Category.propTypes = {
+CategoryFilter.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   selectedCategory: PropTypes.string.isRequired,
   onChangeCategory: PropTypes.func.isRequired,
 };
 
-export default Category;
+export default CategoryFilter;

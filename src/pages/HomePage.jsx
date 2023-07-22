@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ThreadList from '../components/thread/ThreadList';
-import Category from '../components/category/CategoryFilter';
+import CategoryFilter from '../components/category/CategoryFilter';
 import { asyncPopulateUsersAndThreads } from '../states/shared/action';
 
 function HomePage() {
@@ -39,10 +39,10 @@ function HomePage() {
     <div className="bg-gray-900 min-h-screen py-8">
       <div className="max-w-3xl mx-auto">
         <section className="bg-gray-600 p-4 shadow-md rounded-lg">
-          <Category
+          <CategoryFilter
             categories={categories}
-            category={category}
-            onChange={handleFilterChange}
+            selectedCategory={category}
+            onChangeCategory={handleFilterChange}
           />
           <div className="mt-4">
             <ThreadList threadList={filteredThreads} />
