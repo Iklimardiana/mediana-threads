@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
@@ -7,10 +8,11 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import CreateThreadPage from './pages/addThreadPage';
 import DetailPage from './pages/DetailPage';
 import Navigation from './components/Navigation';
+import Loading from './components/Loading';
+import Header from './components/Header';
 import { asyncPreloadProcess } from './states/isPreload/action';
 import { asyncUnsetAuthUser } from './states/authUser/action';
 import './styles/index.css';
-import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
   const { authUser = null, isPreload = false } = useSelector(
@@ -34,6 +36,7 @@ function App() {
   if (authUser === null) {
     return (
       <>
+        <Loading />
         <main>
           <Routes>
             <Route path="/" element={<LoginPage />} />
@@ -46,25 +49,23 @@ function App() {
   }
 
   return (
-    <>
-      {/* <Loading /> */}
-      <div className="app-container">
-        {/* <header>
-          
-        </header> */}
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/leaderboard" element={<LeaderboardPage />} />
-            <Route path="/create" element={<CreateThreadPage />} />
-            <Route path="/thread/:id" element={<DetailPage />} />
-          </Routes>
-        </main>
-        <aside>
-          <Navigation signOut={onSignOut} />
-        </aside>
-      </div>
-    </>
+    <div className="app-container">
+      <header>
+        <Loading />
+        <Header authUser={authUser} />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/create" element={<CreateThreadPage />} />
+          <Route path="/thread/:id" element={<DetailPage />} />
+        </Routes>
+      </main>
+      <aside>
+        <Navigation signOut={onSignOut} />
+      </aside>
+    </div>
   );
 }
 

@@ -14,8 +14,8 @@ function threadDetailReducer(threadDetail = null, action = {}) {
           : threadDetail.upVotesBy.concat([action.payload.userId]),
         downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
           ? threadDetail.downVotesBy.filter(
-              (id) => id !== action.payload.userId
-            )
+            (id) => id !== action.payload.userId
+          )
           : threadDetail.downVotesBy,
       };
     case ActionType.VOTE_DOWN_THREAD_DETAIL:
@@ -23,8 +23,8 @@ function threadDetailReducer(threadDetail = null, action = {}) {
         ...threadDetail,
         downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
           ? threadDetail.downVotesBy.filter(
-              (id) => id !== action.payload.userId
-            )
+            (id) => id !== action.payload.userId
+          )
           : threadDetail.downVotesBy.concat([action.payload.userId]),
         upVotesBy: threadDetail.upVotesBy.includes(action.payload.userId)
           ? threadDetail.upVotesBy.filter((id) => id !== action.payload.userId)
@@ -35,8 +35,8 @@ function threadDetailReducer(threadDetail = null, action = {}) {
         ...threadDetail,
         downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
           ? threadDetail.downVotesBy.filter(
-              (id) => id !== action.payload.userId
-            )
+            (id) => id !== action.payload.userId
+          )
           : threadDetail.downVotesBy,
         upVotesBy: threadDetail.upVotesBy.includes(action.payload.userId)
           ? threadDetail.upVotesBy.filter((id) => id !== action.payload.userId)
@@ -59,8 +59,8 @@ function threadDetailReducer(threadDetail = null, action = {}) {
                 : comment.upVotesBy.concat([action.payload.userId]),
               downVotesBy: comment.downVotesBy.includes(action.payload.userId)
                 ? comment.downVotesBy.filter(
-                    (id) => id !== action.payload.userId
-                  )
+                  (id) => id !== action.payload.userId
+                )
                 : comment.downVotesBy,
             };
           }
@@ -76,8 +76,8 @@ function threadDetailReducer(threadDetail = null, action = {}) {
               ...comment,
               downVotesBy: comment.downVotesBy.includes(action.payload.userId)
                 ? comment.downVotesBy.filter(
-                    (id) => id !== action.payload.userId
-                  )
+                  (id) => id !== action.payload.userId
+                )
                 : comment.downVotesBy.concat([action.payload.userId]),
               upVotesBy: comment.upVotesBy.includes(action.payload.userId)
                 ? comment.upVotesBy.filter((id) => id !== action.payload.userId)
@@ -96,8 +96,8 @@ function threadDetailReducer(threadDetail = null, action = {}) {
               ...comment,
               downVotesBy: comment.downVotesBy.includes(action.payload.userId)
                 ? comment.downVotesBy.filter(
-                    (id) => id !== action.payload.userId
-                  )
+                  (id) => id !== action.payload.userId
+                )
                 : comment.downVotesBy,
               upVotesBy: comment.upVotesBy.includes(action.payload.userId)
                 ? comment.upVotesBy.filter((id) => id !== action.payload.userId)

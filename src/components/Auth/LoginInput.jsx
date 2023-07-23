@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import useInput from '../../hooks/useInput';
 import { Link } from 'react-router-dom';
+import useInput from '../../hooks/useInput';
 
 function LoginInput({ login }) {
   const [email, onEmailChange] = useInput('');
@@ -50,7 +50,8 @@ function LoginInput({ login }) {
         Sign in
       </button>
       <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-        Don’t have an account yet?{' '}
+        Don’t have an account yet?
+        {' '}
         <Link
           className="font-medium text-primary-600 hover:underline dark:text-primary-500"
           to="/register"

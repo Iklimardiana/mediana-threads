@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ThreadList from '../components/thread/ThreadList';
 import CategoryFilter from '../components/category/CategoryFilter';
-import { asyncPopulateUsersAndThreads } from '../states/shared/action';
+import asyncPopulateUsersAndThreads from '../states/shared/action';
 
 function HomePage() {
   const {
@@ -37,7 +37,7 @@ function HomePage() {
 
   return (
     <div className="bg-gray-900 min-h-screen py-8">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto mt-14">
         <section className="bg-gray-600 p-4 shadow-md rounded-lg">
           <CategoryFilter
             categories={categories}

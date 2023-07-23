@@ -13,7 +13,7 @@ function LeaderboardList({ leaderboardList }) {
         {leaderboardList.map((leaderboard) => (
           <div
             key={leaderboard.user.id}
-            className="flex items-center justify-between bg-white px-4 py-2"
+            className="flex items-center justify-between bg-gray-700 px-4 py-2"
           >
             <div className="flex items-center space-x-4">
               <img

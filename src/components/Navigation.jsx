@@ -33,14 +33,16 @@ function Navigation({ signOut }) {
           <MdLeaderboard className="border p-1 w-9 h-9" />
         </button>
       </Link>
-      <button
-        type="button"
-        className="bg-gray-500 hover:bg-gray-600"
-        onClick={signOut}
-        title="Sign out"
-      >
-        <MdLogout className="border p-1 w-9 h-9" />
-      </button>
+      <Link to="/">
+        <button
+          type="button"
+          className="bg-gray-500 hover:bg-gray-600"
+          onClick={signOut}
+          title="Sign out"
+        >
+          <MdLogout className="border p-1 w-9 h-9" />
+        </button>
+      </Link>
     </div>
   );
 }

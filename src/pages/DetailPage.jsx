@@ -22,7 +22,7 @@ function DetailPage() {
 
   return (
     <section className="bg-gray-900 min-h-screen py-8">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto mt-14">
         <div className="bg-gray-800 p-4 shadow-md rounded-lg">
           <ThreadDetailHeader detail={threadDetail} />
           <ThreadDetailContent detail={threadDetail} />
