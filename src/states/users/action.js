@@ -17,6 +17,7 @@ function asyncRegisterUser({ name, email, password }) {
   return async () => {
     try {
       await api.register({ name, email, password });
+      alert('Your account successfully registered');
     } catch (error) {
       alert(error.message);
     }

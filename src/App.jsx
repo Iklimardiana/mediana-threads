@@ -3,6 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
+import LeaderboardPage from './pages/LeaderboardPage';
+import CreateThreadPage from './pages/addThreadPage';
+import DetailPage from './pages/DetailPage';
 import Navigation from './components/Navigation';
 import { asyncPreloadProcess } from './states/isPreload/action';
 import { asyncUnsetAuthUser } from './states/authUser/action';
@@ -52,6 +55,9 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/leaderboard" element={<LeaderboardPage />} />
+            <Route path="/create" element={<CreateThreadPage />} />
+            <Route path="/thread/:id" element={<DetailPage />} />
           </Routes>
         </main>
         <aside>

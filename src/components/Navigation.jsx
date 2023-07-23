@@ -24,7 +24,7 @@ function Navigation({ signOut }) {
           <MdGroup className="border p-1 w-9 h-9" />
         </button>
       </Link>
-      <Link to="/leaderboards">
+      <Link to="/leaderboard">
         <button
           type="button"
           className="bg-gray-500 hover:bg-gray-600"

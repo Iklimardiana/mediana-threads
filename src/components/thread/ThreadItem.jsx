@@ -47,4 +47,8 @@ ThreadItem.propTypes = {
   user: PropTypes.shape(userProp).isRequired,
 };
 
+// ThreadItem.defaultProps = {
+//   user: {},
+// };
+
 export default ThreadItem;

@@ -12,11 +12,11 @@ const ActionType = {
   CLEAR_VOTE_COMMENT: 'CLEAR_VOTE_COMMENT',
 };
 
-function receiveThreadDetailActionCreator(ThreadDetail) {
+function receiveThreadDetailActionCreator(threadDetail) {
   return {
     type: ActionType.RECEIVE_THREAD_DETAIL,
     payload: {
-      ThreadDetail,
+      threadDetail,
     },
   };
 }
@@ -95,14 +95,15 @@ function clearVoteCommentActionCreator(userId, commentId) {
 
 function asyncReceiveThreadDetail(threadId) {
   return async (dispatch) => {
+    // dispatch(showLoading());
     dispatch(clearThreadDetailActionCreator());
-
     try {
-      const threadDetail = await api.getThreadDetail(threadId);
+      const threadDetail = await api.getDetailThread(threadId);
       dispatch(receiveThreadDetailActionCreator(threadDetail));
     } catch (error) {
       alert(error.message);
     }
+    // dispatch(hideLoading());
   };
 }
 
