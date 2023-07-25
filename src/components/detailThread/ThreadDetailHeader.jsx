@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import { detailProp } from '../../utils/propHelper';
 import formatDate from '../../utils/index';
 
-function ThreadDetailHeader({ detail }) {
-  const { name, avatar } = detail.owner;
-  const { title, category, createdAt } = detail;
+export default function ThreadDetailHeader({ detail }) {
+  const {
+    owner: { name, avatar },
+    title,
+    category,
+    createdAt
+  } = detail;
 
   return (
     <>
@@ -21,7 +25,7 @@ function ThreadDetailHeader({ detail }) {
             <p className="text-gray-400">{formatDate(createdAt)}</p>
           </div>
         </div>
-        <span className="text-white bg-blue-500 px-2 py-1 rounded-full hover:bg-blue-600 cursor-pointer">
+        <span className="text-white bg-blue-500 px-2 py-1 rounded-lg">
           {`#${category}`}
         </span>
       </header>
@@ -33,4 +37,3 @@ function ThreadDetailHeader({ detail }) {
 ThreadDetailHeader.propTypes = {
   detail: PropTypes.shape(detailProp).isRequired,
 };
-export default ThreadDetailHeader;

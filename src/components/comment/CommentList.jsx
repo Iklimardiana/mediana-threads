@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import CommentItem from './CommentItem';
 import { commentProp } from '../../utils/propHelper';
 
-function CommentList({ comments }) {
+export default function CommentList({ comments }) {
   return (
-    <div className="mt-4">
+    <>
       {comments.map((comment) => (
-        <CommentItem key={comment.id} {...comment} />
+        <div key={comment.id} className="bg-gray-700 border mt-4 p-4 shadow-md rounded-lg">
+          <CommentItem {...comment} />
+        </div>
       ))}
-    </div>
+    </>
   );
 }
 
 CommentList.propTypes = {
   comments: PropTypes.arrayOf(PropTypes.shape(commentProp)).isRequired,
 };
-
-export default CommentList;

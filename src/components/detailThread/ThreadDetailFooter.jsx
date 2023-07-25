@@ -8,16 +8,16 @@ import {
   asyncDownVoteThreadDetail,
 } from '../../states/threadDetail/action';
 
-function ThreadDetailFooter({ detail }) {
+export default function ThreadDetailFooter({ detail }) {
   const { upVotesBy, downVotesBy } = detail;
 
   const dispatch = useDispatch();
 
-  const onUpvoteThread = () => {
+  const handleUpVoteThread = () => {
     dispatch(asyncUpVoteThreadDetail());
   };
 
-  const onDownVoteThread = () => {
+  const handleDownVoteThread = () => {
     dispatch(asyncDownVoteThreadDetail());
   };
 
@@ -27,12 +27,12 @@ function ThreadDetailFooter({ detail }) {
         <ActionButton
           type="up"
           count={upVotesBy.length}
-          onButtonClicked={onUpvoteThread}
+          onButtonClicked={handleUpVoteThread}
         />
         <ActionButton
           type="down"
           count={downVotesBy.length}
-          onButtonClicked={onDownVoteThread}
+          onButtonClicked={handleDownVoteThread}
         />
       </div>
     </footer>
@@ -42,5 +42,3 @@ function ThreadDetailFooter({ detail }) {
 ThreadDetailFooter.propTypes = {
   detail: PropTypes.shape(detailProp).isRequired,
 };
-
-export default ThreadDetailFooter;

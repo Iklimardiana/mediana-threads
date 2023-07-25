@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import parse from 'html-react-parser';
 import { detailProp } from '../../utils/propHelper';
 
-function ThreadDetailContent({ detail }) {
+export default function ThreadDetailContent({ detail }) {
   const { body } = detail;
   return (
     <div className="mt-4">
@@ -15,5 +15,3 @@ function ThreadDetailContent({ detail }) {
 ThreadDetailContent.propTypes = {
   detail: PropTypes.shape(detailProp).isRequired,
 };
-
-export default ThreadDetailContent;

@@ -1,32 +1,21 @@
-import { MdThumbDown, MdThumbUp } from 'react-icons/md';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-function ActionButton({ type, count, onButtonClicked }) {
-  const isVoted = count !== 0;
-
-  let buttonClassName = 'action-btn';
-  if (isVoted) {
-    buttonClassName += type === 'up' ? ' text-blue-600' : ' text-red-600';
-  } else {
-    buttonClassName += ' text-gray-200';
-  }
-  if (type === 'up') {
-    buttonClassName += ' liked';
-  }
-
+export default function ActionButton({ type, count, onButtonClicked }) {
   return (
-    <button
-      className={`${buttonClassName} flex items-center gap-1`}
-      type="button"
-      onClick={onButtonClicked}
-    >
-      {type === 'up' ? (
-        <MdThumbUp className="text-xl" />
-      ) : (
-        <MdThumbDown className="text-xl" />
-      )}
-      <p className="text-sm">{count}</p>
-    </button>
+    <div className="flex items-center gap-1 text-white">
+      <button
+        type="button"
+        onClick={onButtonClicked}
+      >
+        {type === 'up' ? (
+          <FaThumbsUp className="text-xl" />
+        ) : (
+          <FaThumbsDown className="text-xl" />
+        )}
+      </button>
+      <p className="text-sm mr-1">{count}</p>
+    </div>
   );
 }
 
@@ -35,5 +24,3 @@ ActionButton.propTypes = {
   count: PropTypes.number.isRequired,
   onButtonClicked: PropTypes.func.isRequired,
 };
-
-export default ActionButton;

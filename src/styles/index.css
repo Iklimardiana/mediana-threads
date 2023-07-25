@@ -2,11 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 10px;
+  bottom: 30%;
+}
 
-.side-nav{  
-    display: flex;
-    flex-direction: column;      
-    position: fixed;
-    left: 10px;
-    bottom: 30%;    
-}   
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modal {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.open {
+  opacity: 1;
+}
+
+.modal-container {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.modal:not(.animate-fade-in) {
+  animation: fade-out 0.3s ease-in-out;
+}
+
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(8px);
+  z-index: 49;
+}
