@@ -9,17 +9,17 @@ export default function ThreadHeader({ user, id, title, category }) {
   return (
     <header>
       <div className="flex items-center justify-between">
-        <div className="flex items-center mb-2">
+        <div className="flex items-start mb-2">
           <img
             className="w-12 h-12 rounded-full mr-4 text-white"
             src={avatar}
             alt="avatar"
           />
           <div className="">
-            <p className="font-semibold text-white">{name}</p>
-            <Link to={`/thread/${id}`} className="text-blue-500">
+            <Link to={`/thread/${id}`} className="text-xl text-white font-bold hover:underline">
               {title}
             </Link>
+            <p className="text-white">{`By: ${name}`}</p>
           </div>
         </div>
         <div className="mb-2 text-left">
