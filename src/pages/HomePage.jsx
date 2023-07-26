@@ -40,7 +40,7 @@ export default function HomePage() {
       <div className="max-w-3xl mx-auto mt-14">
         <CategoryFilter
           categories={categories}
-          selectedCategory={category}
+          filteredCategory={category}
           onCategoryChange={handleFilterChange}
         />
         <div className="mt-4">
