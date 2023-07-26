@@ -1,27 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function CategoryFilter({ categories, selectedCategory, onCategoryChange }) {
+export default function CategoryFilter({ categories, filteredCategory, onCategoryChange }) {
   return (
-    <div className="relative flex items-center">
-      <select
-        className="bg-gray-700 text-white border py-2 px-4 pr-8 rounded-md shadow-md focus:outline-none focus:ring focus:border-blue-500"
-        value={selectedCategory}
-        onChange={onCategoryChange}
+    <div className="relative flex justify-end">
+      <div
+        className="inline-flex items-center overflow-hidden rounded-md border bg-gray-700"
       >
-        <option value="">Select Category</option>
-        {categories.map((category) => (
-          <option key={category} value={category}>
-            {`#${category}`}
-          </option>
-        ))}
-      </select>
+        <select
+          className="h-full p-2 text-white  bg-gray-700 hover:bg-gray-800 hover:text-gray-100"
+          value={filteredCategory}
+          onChange={onCategoryChange}
+        >
+          <option value="">Select Category</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {`#${category}`}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 }
 
 CategoryFilter.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-  selectedCategory: PropTypes.string.isRequired,
+  filteredCategory: PropTypes.string.isRequired,
   onCategoryChange: PropTypes.func.isRequired,
 };
