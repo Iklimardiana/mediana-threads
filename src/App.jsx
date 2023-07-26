@@ -62,7 +62,7 @@ function App() {
     <div className="pl-5 pr-5">
       <header>
         <Loading />
-        <Header authUser={authUser} />
+        <Header authUser={authUser} signOut={onSignOut} />
       </header>
       <main>
         <Routes>
@@ -72,7 +72,7 @@ function App() {
         </Routes>
       </main>
       <aside>
-        <Navigation signOut={onSignOut} setIsModalOpen={setIsModalOpen} />
+        <Navigation setIsModalOpen={setIsModalOpen} />
         {isModalOpen && (
           <>
             <div className="blur-overlay" />
