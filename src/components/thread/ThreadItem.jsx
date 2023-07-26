@@ -16,7 +16,10 @@ export default function ThreadItem({
   downVotesBy,
 }) {
   return (
-    <div className="bg-gray-700 rounded-lg border p-4 mb-4">
+    <div className="relative block overflow-hidden bg-gray-700 rounded-lg border border-gray-100 p-3 sm:p-4 lg:p-5 mb-5 hover:bg-gray-800">
+      <span
+        className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+      />
       <ThreadHeader
         user={user === undefined ? '' : user}
         id={id}
