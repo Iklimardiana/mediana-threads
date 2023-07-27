@@ -1,4 +1,6 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import LoginInput from '../components/Auth/LoginInput';
 import { asyncSetAuthUser } from '../states/authUser/action';
 
@@ -20,6 +22,16 @@ export default function LoginPage() {
             Sign in to your account
           </h1>
           <LoginInput login={handleLogin} />
+          <p className="text-sm font-light text-gray-400">
+            Don’t have an account yet?
+            {' '}
+            <Link
+              className="font-medium hover:underline text-primary-500"
+              to="/register"
+            >
+              Sign up
+            </Link>
+          </p>
         </div>
       </div>
     </div>

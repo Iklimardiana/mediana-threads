@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "cypress/globals": true
   },
   "extends": ["plugin:react/recommended", "airbnb"],
   "overrides": [],
@@ -10,7 +11,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "react-hooks", "cypress"],
   "rules": {
     "no-alert": "off",
     "comma-dangle": "off",
@@ -24,6 +25,8 @@
     "no-case-declarations": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
-    "jsx-a11y/no-noninteractive-element-interactions": "off"
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-underscore-dangle": "off"
   }
 }

@@ -1,5 +1,6 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import useInput from '../../hooks/useInput';
 
 export default function LoginInput({ login }) {
@@ -49,16 +50,6 @@ export default function LoginInput({ login }) {
       >
         Sign in
       </button>
-      <p className="text-sm font-light text-gray-400">
-        Don’t have an account yet?
-        {' '}
-        <Link
-          className="font-medium hover:underline text-primary-500"
-          to="/register"
-        >
-          Sign up
-        </Link>
-      </p>
     </form>
   );
 }

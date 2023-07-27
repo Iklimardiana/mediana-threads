@@ -23,7 +23,7 @@ export default function Header({ authUser, signOut }) {
             <IoMdChatboxes />
           </Link>
         </div>
-        <span className="font-semibold text-xl tracking-tight">Me-Threads</span>
+        <p className="font-semibold text-xl tracking-tight">Me-Threads</p>
       </div>
       <div className="w-full flex-grow flex items-center ">
         <div className="flex-grow" />
@@ -64,14 +64,6 @@ export default function Header({ authUser, signOut }) {
           </div>
           )}
         </div>
-        {/* <div>
-          <img
-            className="rounded-full h-11 w-11 "
-            src={avatar}
-            alt={id}
-            title={name}
-          />
-        </div> */}
       </div>
     </nav>
 

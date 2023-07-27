@@ -3,7 +3,7 @@ import api from '../../utils/api';
 import { receiveThreadsActionCreator } from '../thread/action';
 import { receiveUsersActionCreator } from '../users/action';
 
-export default function asyncPopulateUsersAndThreads() {
+function asyncPopulateUsersAndThreads() {
   return async (dispatch) => {
     dispatch(showLoading());
     try {
@@ -18,3 +18,6 @@ export default function asyncPopulateUsersAndThreads() {
     dispatch(hideLoading());
   };
 }
+
+// eslint-disable-next-line import/prefer-default-export
+export { asyncPopulateUsersAndThreads };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ThreadList from '../components/thread/ThreadList';
 import CategoryFilter from '../components/category/CategoryFilter';
-import asyncPopulateUsersAndThreads from '../states/shared/action';
+import { asyncPopulateUsersAndThreads } from '../states/shared/action';
 
 export default function HomePage() {
   const {

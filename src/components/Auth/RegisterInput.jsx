@@ -1,5 +1,5 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import useInput from '../../hooks/useInput';
 
 export default function RegisterInput({ onRegister }) {
@@ -72,16 +72,6 @@ export default function RegisterInput({ onRegister }) {
       >
         Sign up
       </button>
-      <p className="text-sm font-light text-gray-400">
-        Do you have an account?
-        {' '}
-        <Link
-          to="/"
-          className="font-medium hover:underline text-primary-500"
-        >
-          Sign in
-        </Link>
-      </p>
     </form>
   );
 }

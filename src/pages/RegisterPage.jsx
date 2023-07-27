@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import RegisterInput from '../components/Auth/RegisterInput';
 import { asyncRegisterUser } from '../states/users/action';
 
@@ -23,6 +23,16 @@ export default function RegisterPage() {
             Sign up
           </h1>
           <RegisterInput onRegister={handleRegister} />
+          <p className="text-sm font-light text-gray-400">
+            Do you have an account?
+            {' '}
+            <Link
+              to="/"
+              className="font-medium hover:underline text-primary-500"
+            >
+              Sign in
+            </Link>
+          </p>
         </div>
       </div>
     </div>
