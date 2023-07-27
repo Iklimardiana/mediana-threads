@@ -1,0 +1,29 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  automation-test-job:
+    runs-on: ${{ matrix.os }} # Define the matrix for operating systems
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest] # Run the workflow on both Ubuntu and macOS
+        node-version: [16.19.1] # Define the Node.js version here or add more versions if needed
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies and Run Tests
+        run: |
+          npm ci
+          npm run ci:test
