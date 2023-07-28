@@ -130,7 +130,7 @@ function asyncDownVoteThreadDetail() {
     dispatch(downVoteThreadDetailActionCreator(authUser.id));
 
     try {
-      await api.downvoteComment(threadDetail.id);
+      await api.downvoteThread(threadDetail.id);
     } catch (error) {
       alert(error.message);
     }
